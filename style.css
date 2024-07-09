@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50,-50);
+    width: 50px;
+    aspect-ratio: 1;
+    display:grid;
+    -webkit-mask: conic-gradient(from 15deg,#0000,#000);
+    animation: l26 1s infinite steps(12);
+  }
+  .loader,
+  .loader:before,
+  .loader:after{
+    background:
+      radial-gradient(closest-side at 50% 12.5%,
+       #f03355 96%,#0000) 50% 0/20% 80% repeat-y,
+      radial-gradient(closest-side at 12.5% 50%,
+       #f03355 96%,#0000) 0 50%/80% 20% repeat-x;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+  }
+  .loader:after {
+    transform: rotate(60deg);
+  }
+  
+  @keyframes l26 {
+    100% {transform:rotate(1turn)}
+  }
+
+.main-section {
+    height: auto;
+    width: 100%;
+    background-color: aqua;
+   padding:0px 300px;
+}
+
+.main-section h1 {
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.section {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.div {
+    background-color: transparent;
+}
+
+.popUpImage {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+
+}
+.popUpImage span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    color: #fff;
+    margin:0px 20px;
+    cursor: pointer;
+    
+}
+.popUpImage img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
